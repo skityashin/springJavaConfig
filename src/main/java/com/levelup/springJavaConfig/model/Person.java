@@ -3,15 +3,15 @@ package com.levelup.springJavaConfig.model;
 import javax.persistence.*;
 import java.io.Serializable;
 
-//@Entity
-@Table(name = "user")
-public class User implements Serializable{
+@Entity
+@Table(name = "person")
+public class Person implements Serializable{
     private long id;
     private String login;
     private String email;
     private String password;
 
-    public User() {
+    public Person() {
     }
 
     @Id
