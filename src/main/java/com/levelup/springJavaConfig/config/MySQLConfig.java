@@ -1,5 +1,6 @@
 package com.levelup.springJavaConfig.config;
 
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +44,7 @@ public class MySQLConfig {
         final LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
 //        sessionFactory.setMappingResources(new String[] {"com.levelup"});
-        sessionFactory.setPackagesToScan(new String[] {"com.levelup.springJavaConfig.model"});
+        sessionFactory.setPackagesToScan(new String[] {"com.levelup"});
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
@@ -51,6 +52,7 @@ public class MySQLConfig {
     @Bean
     public DataSource dataSource() {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//        BasicDataSource dataSource = new BasicDataSource();
 //        dataSource.setDriverClassName(Preconditions.checkNotNull(jdbcDriver));
 //        dataSource.setUrl(Preconditions.checkNotNull(jdbcURL));
 //        dataSource.setUsername(Preconditions.checkNotNull(jdbcUser));

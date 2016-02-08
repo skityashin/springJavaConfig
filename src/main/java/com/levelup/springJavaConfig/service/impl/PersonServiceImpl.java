@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @Service
-public class PersonServiseImpl implements PersonService{
+public class PersonServiceImpl implements PersonService{
 
     @Autowired
     private PersonDao personDao;
